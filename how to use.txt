@@ -1,0 +1,49 @@
+
+*this is a template if u wanna log globally add your own flask serer
+
+1. Set up your environment
+Make sure you have Python installed (preferably 3.7+).
+
+Open a terminal or command prompt.
+
+2. Install dependencies
+Run:
+pip install Flask Flask-SQLAlchemy Flask-CORS
+
+4. Run the Flask app
+python IPLoggerKuromi.py
+
+
+You should see output like:
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+
+5. Visit the site to log IPs
+Open a browser and go to:
+
+http://localhost:5000/
+(or replace localhost with your server IP if running remotely)
+This will log your IP and user agent.
+The server console will print your IP and user agent.
+You can only log once per minute per IP (rate limiting).
+
+6. View logs
+To see logs in JSON:
+http://localhost:5000/logs
+
+7. to clear logs
+http://localhost:5000/clear-logs
+
+9. Live logs (optional)
+You can connect to the live logs stream at:
+http://localhost:5000/live-logs
+
+
+
+      URL	                    What it does
+------------------        ------------------------------
+/	                    Log your IP and user agent
+/logs	                    Get logged IPs (JSON)
+/clear-logs                 (POST) Clear all stored logs
+/export-logs/json           Export all logs as JSON
+/export-logs/csv	    Export all logs as CSV
+/live-logs	            Live stream of new IP logs (SSE)
